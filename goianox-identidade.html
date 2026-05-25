@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Goianox : Identidade Visual</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,800;1,9..40,800" rel="stylesheet">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --green-dark:  #149173;
+  --green-light: #2db460;
+  --blue-dark:   #21417a;
+  --blue-light:  #2563ae;
+  --bg:          #0b0b0d;
+  --bg-2:        #101013;
+  --white:       #ffffff;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ── Nav dots ─────────────────────── */
+.nav-dots {
+  position: fixed; right: 24px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.nav-dots a {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: block; transition: all .35s;
+}
+.nav-dots a.active,
+.nav-dots a:hover {
+  background: #fff; transform: scale(1.5);
+}
+
+.img1mk {
+  max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-position: 60% 12%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* ── Scroll container ─────────────── */
+#scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+/* ── Section base ─────────────────── */
+section {
+  height: 100vh;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex; flex-direction: column;
+  justify-content: center;
+  padding: 80px max(80px, calc((100vw - 1600px) / 2 + 80px));
+  position: relative;
+  container-type: size;
+  container-name: slide;
+  scroll-behavior: smooth;
+}
+
+/* ── Utilities ────────────────────── */
+.grad-green {
+  padding-right: 10px;
+  background: linear-gradient(90deg, var(--green-dark), var(--green-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.grad-blue {
+  padding-right: 10px;
+  background: linear-gradient(135deg,#21417a,#2563ae);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px; font-weight: 700; letter-spacing: 4px;
+  text-transform: uppercase; color: #fff;
+  margin-bottom: 12px;
+  margin-left: 10px;
+}
+.section-label.blue { color: #fff; }
+
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 800; font-style: italic;
+  text-transform: uppercase; line-height: 1;
+  margin-bottom: 18px;
+}
+
+.section-text {
+  font-size: 14px; color: rgba(255,255,255,.5);
+  line-height: 1.8; max-width: 540px;
+}
+
+.page-num {
+  position: absolute; bottom: 32px; right: max(80px, calc((100vw - 1600px) / 2 + 80px));
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 600; letter-spacing: 3px;
+  color: rgba(255,255,255,.12);
+}
+
+/* ── Reveal animations ────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .1s; }
+.d2 { transition-delay: .2s; }
+.d3 { transition-delay: .3s; }
+.d4 { transition-delay: .42s; }
+
+/* ══════════════════════════════════
+   01 : CAPA
+══════════════════════════════════ */
+#capa { overflow: hidden; justify-content: center; align-items: center; text-align: center; padding-bottom: 20px; }
+
+.capa-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(140deg, #0b1410 0%, #0b0b0d 55%, #0c0f1c 100%);
+}
+.orb {
+  position: absolute; border-radius: 50%; filter: blur(120px);
+  animation: breathe 7s ease-in-out infinite;
+}
+.orb-1 { width: 520px; height: 520px; background: var(--green-light); opacity: .09; top: -140px; right: -80px; }
+.orb-2 { width: 360px; height: 360px; background: var(--blue-light);  opacity: .06; bottom: 60px; right: 260px; animation-delay: -3s; }
+
+@keyframes breathe {
+  0%,100% { transform: scale(1); }
+  50%      { transform: scale(1.12); }
+}
+
+/* ══════════════════════════════════
+   SISTEMA GLOBAL DE BACKGROUND
+══════════════════════════════════ */
+
+/* Grade geométrica em todas as seções */
+section::after {
+  content: '';
+  position: absolute; inset: 0;
+  pointer-events: none; z-index: 0;
+  background-image:linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 3%) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 0%, transparent 100%);
+  animation: gridPulse 12s ease-in-out infinite;
+}
+@keyframes gridPulse {
+  0%,100% { opacity: .7; }
+  50%      { opacity: 1; }
+}
+
+/* Orbs universais — injetados via JS */
+.bg-orb {
+  position: absolute; border-radius: 50%;
+  filter: blur(110px);
+  pointer-events: none; z-index: 0;
+  animation: orbFloat 12s ease-in-out infinite;
+}
+@keyframes orbFloat {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(18px, -22px) scale(1.08); }
+  66%  { transform: translate(-14px, 12px) scale(.95); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Linha de borda superior luminosa */
+.section-topline {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 1px; z-index: 1; pointer-events: none;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,.06) 30%,
+    rgba(255,255,255,.06) 70%,
+    transparent 100%);
+}
+
+/* Garante que o conteúdo fique acima dos orbs */
+section > *:not(.bg-orb):not(.capa-bg):not(.orb):not(.fech-bg):not(.fech-orb):not(.fech-topline):not(.section-topline) {
+  position: relative; z-index: 1;
+}
+
+.capa-pre {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 5px;
+  text-transform: uppercase; color: #fff;
+  margin-bottom: 18px; position: relative;
+  animation: fadeUp .8s .05s both;
+}
+.capa-h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(68px, 11vw, 128px);
+  font-weight: 800; font-style: italic;
+  text-transform: uppercase; line-height: .88;
+  position: relative;
+  animation: fadeUp .8s .15s both;
+}
+.capa-h1 .outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,.22);
+}
+.capa-sub {
+  font-size: 15px; color: rgba(255,255,255,.42);
+  max-width: 480px; line-height: 1.75;
+  margin: 26px auto 0;
+  position: relative;
+  animation: fadeUp .8s .28s both;
+}
+.capa-line {
+  width: 44px; height: 2px;
+  margin: 28px auto 0;
+  background: linear-gradient(90deg, var(--green-dark), var(--green-light));
+  position: relative;
+  animation: fadeUp .8s .38s both;
+}
+.capa-foot {
+  display: flex; gap: 48px; justify-content: center;
+  margin-top: 52px;
+  animation: fadeUp .8s .5s both;
+  position: relative;
+}
+.foot-item { display: flex; flex-direction: column; gap: 4px; align-items: center; }
+.foot-label {
+  font-size: 9px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(255,255,255,.25);
+}
+.foot-val {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 600; color: rgba(255,255,255,.65);
+}
+
+/* ══════════════════════════════════
+   02 : CONTEXTO
+══════════════════════════════════ */
+#contexto { /*background: var(--bg-2);*/ }
+
+.ctx-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin-top: 52px;
+}
+.brand-card {
+  border-radius: 18px; padding: 32px 32px;
+  position: relative; overflow: hidden;
+  background-color: #121212;
+  transition: transform .4s, border-color .4s;
+}
+.brand-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,.14); }
+.brand-card::before {
+  content: ''; position: absolute; inset: 0; opacity: .05; transition: opacity .4s;
+}
+.brand-card:hover::before { opacity: .1; }
+.brand-card.green::before { background: linear-gradient(135deg, var(--green-dark), var(--green-light)); }
+.brand-card.blue::before  { background: linear-gradient(135deg, var(--blue-dark), var(--blue-light)); }
+
+.card-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 9px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; border-radius: 100px;
+  padding: 5px 12px; margin-bottom: 18px;
+}
+.card-tag.green { background: rgba(45,180,96,.12); color: var(--green-light); }
+.card-tag.blue  { background: rgba(37,99,174,.18); color: #6ea8f7; }
+
+.card-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 30px; font-weight: 800; font-style: italic;
+  text-transform: uppercase; margin-bottom: 10px;
+}
+.card-desc { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.75; }
+
+/* ══════════════════════════════════
+   03 : SHOP
+══════════════════════════════════ */
+#shop {}
+
+.two-col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 72px; align-items: start; margin-top: 32px;
+}
+
+.logo-frame {
+  height: clamp(160px, 24cqh, 280px); border-radius: 18px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+  .simbloimgg {
+    height: 200px !Important;
+    width: 100% !Important;
+  }
+  .logo-frame img {
+    height: 30% !important;
+  }
+}
+
+.logo-frame img { height: 50%; object-fit: contain; display: block; }
+/* Logo frame dentro do small-grid (versão branca/maior) */
+
+.small-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.placeholder {
+  border: 1.5px dashed rgba(255,255,255,.11);
+  border-radius: 14px; aspect-ratio: 1;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px;
+  color: rgba(255,255,255,.22);
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  transition: border-color .3s;
+}
+.placeholder:hover { border-color: rgba(255,255,255,.25); }
+.placeholder svg { opacity: .25; }
+
+/* Info blocks */
+.info-block { margin-bottom: 32px; }
+.block-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 4px;
+  text-transform: uppercase; color: rgba(255,255,255,.3);
+  margin-bottom: 14px;
+}
+.symbol-row { display: flex; gap: 18px; align-items: flex-start; }
+.symbol-icon {
+  width: min(140px, 13cqw); aspect-ratio: 140/98; height: auto; border-radius: 12px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.symbol-icon.green { background: linear-gradient(135deg, var(--green-dark), var(--green-light)); }
+.symbol-icon.blue  { background: linear-gradient(135deg, var(--blue-dark), var(--blue-light)); }
+.symbol-text { font-size: 13px; color: rgba(255,255,255,.48); line-height: 1.8; }
+
+/* Palette */
+.palette { display: flex; gap: 12px; }
+.swatch { flex: 1; border-radius: 12px; overflow: hidden; }
+.swatch-color { height: 98px; width: 100%; }
+.swatch-info {
+  padding: 9px 12px;
+  background: rgba(255,255,255,.04);
+}
+.swatch-name { font-size: 10px; font-weight: 500; color: rgba(255,255,255,.6); margin-bottom: 2px; }
+.swatch-hex {
+  font-size: 12px; font-weight: 700; color: rgba(255,255,255,.35);;
+}
+.palette-note { font-size: 12px; color: rgba(255,255,255,.3); margin-top: 14px; line-height: 1.75; }
+
+/* ══════════════════════════════════
+   04 : NETWORK  (same layout as shop)
+══════════════════════════════════ */
+#network { background: var(--bg-2); }
+
+/* ══════════════════════════════════
+   05 : VARIAÇÕES
+══════════════════════════════════ */
+#variacoes {}
+
+.var-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 14px; margin-top: 48px;
+}
+.var-cell {
+  aspect-ratio: 1; border-radius: 14px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 7px;
+  color: rgba(255,255,255,.2);
+  font-size: 9px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all .3s;
+  padding: 12%;
+}
+.var-cell:hover { border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.02); }
+.var-cell.on-green { background: linear-gradient(135deg, var(--green-dark), var(--green-light)); border: none; }
+.var-cell.on-blue  { background: linear-gradient(135deg, var(--blue-dark), var(--blue-light)); border: none; }
+.var-cell.on-white { background: #f5f5f5; border: none; color: rgba(0,0,0,.22); }
+.var-cell.on-black { background: #111; border-color: rgba(255,255,255,.08); }
+.var-cell img { max-height: 100%; max-width: 100%; width: 100%; height: auto; object-fit: contain; }
+
+/* ══════════════════════════════════
+   06 : MOCKUPS
+══════════════════════════════════ */
+#mockups { background: var(--bg-2); }
+
+.mock-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px; margin-top: 48px;
+  height: clamp(280px, 80cqh, 520px);
+}
+.mock-cell {
+  border-radius: 18px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+  color: rgba(255,255,255,.2);
+  font-size: 9px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; transition: all .3s;
+  overflow: hidden;
+}
+.mock-cell:hover { border-color: #23a669;}
+.mock-cell.span2 { grid-row: span 2; }
+.mock-cell svg { opacity: .22; }
+.mock-cell:not(.span2) { cursor: pointer; }
+.mock-cell:not(.span2):hover { outline: 2px solid #ffffff; }
+
+@media (max-width: 1024px) {
+  .mock-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    height: auto;
+  }
+  .mock-cell.span2 {
+    grid-row: span 1;
+  }
+  .mock-cell {
+    aspect-ratio: 1;
+    cursor: default !important;
+  }
+  .mock-cell:not(.span2):hover {
+    outline: none;
+  }
+}
+.mock-cell:not(.span2) { cursor: pointer; }
+.mock-cell:not(.span2):hover { outline: 2px solid #ffffff; }
+
+@media (max-width: 1024px) {
+  .mock-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    height: auto;
+  }
+  .mock-cell.span2 {
+    grid-row: span 1;
+  }
+  .mock-cell {
+    aspect-ratio: 1;
+    cursor: default !important;
+  }
+  .mock-cell:not(.span2):hover {
+    outline: none;
+  }
+}
+
+/* FLIP animation classes */
+.mock-cell.flipping {
+  pointer-events: none;
+  z-index: 10;
+}
+.mock-grid img { pointer-events: none; }
+
+/* ══════════════════════════════════
+   07 : FECHAMENTO
+══════════════════════════════════ */
+#fechamento {
+  padding: 80px;
+  align-items: center; justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Background multicamadas */
+.fech-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 55%, rgba(20,145,115,.10) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 30% 70%, rgba(33,65,122,.08) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 35% at 70% 30%, rgba(45,180,96,.06) 0%, transparent 50%);
+}
+
+/* Grade decorativa de fundo */
+.fech-bg::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 100%);
+}
+
+/* Orbs animados no fechamento */
+.fech-orb {
+  position: absolute; border-radius: 50%; filter: blur(90px);
+  animation: breathe 8s ease-in-out infinite;
+  pointer-events: none;
+}
+.fech-orb-1 {
+  width: 480px; height: 480px;
+  background: var(--green-light); opacity: .055;
+  top: -100px; left: -100px;
+}
+.fech-orb-2 {
+  width: 380px; height: 380px;
+  background: var(--blue-light); opacity: .045;
+  bottom: 80px; right: -80px;
+  animation-delay: -4s;
+}
+.fech-orb-3 {
+  width: 220px; height: 220px;
+  background: var(--green-dark); opacity: .07;
+  bottom: 20%; left: 50%;
+  transform: translateX(-50%);
+  animation-delay: -2s;
+}
+
+/* Linha decorativa no topo */
+.fech-topline {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 1px; height: 80px;
+  background: linear-gradient(180deg, transparent, rgba(45,180,96,.35), transparent);
+}
+
+.fech-pre {
+  font-size: 10px; font-weight: 700; letter-spacing: 5px;
+  text-transform: uppercase; color: rgba(255,255,255,.22);
+  margin-bottom: 20px; position: relative;
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.fech-pre::before,
+.fech-pre::after {
+  content: '';
+  display: inline-block;
+  width: 24px; height: 1px;
+  background: rgba(255,255,255,.15);
+}
+
+.fech-h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(64px, 11vw, 128px);
+  font-weight: 800; font-style: italic;
+  text-transform: uppercase; line-height: .88;
+  position: relative;
+  letter-spacing: -1px;
+}
+
+/* "é um mundo" com tratamento especial */
+.fech-world {
+  display: block;
+  position: relative;
+}
+.fech-world-inner {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,.18);
+}
+.fech-world-inner::after {
+  content: attr(data-text);
+  position: absolute; inset: 0;
+  background: linear-gradient(100deg,
+    rgba(255,255,255,.55) 0%,
+    rgba(255,255,255,.75) 40%,
+    rgba(255,255,255,.38) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: blur(.3px);
+}
+
+/* Ponto decorativo após "mundo" */
+.fech-dot {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--green-dark), var(--green-light));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Divisor */
+.fech-divider {
+  display: flex; align-items: center; gap: 16px;
+  justify-content: center;
+  margin: 28px auto 0;
+  max-width: 360px;
+  position: relative;
+}
+.fech-divider-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent);
+}
+.fech-divider-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.08);
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,.03);
+}
+
+.fech-sub {
+  font-size: 14px; color: rgba(255,255,255,.28);
+  margin-top: 22px; letter-spacing: .4px; line-height: 1.75;
+  position: relative; max-width: 440px; margin-left: auto; margin-right: auto;
+}
+
+/* Pillars / destaques */
+.fech-pillars {
+  display: flex; gap: 0; justify-content: center;
+  margin-top: 40px; position: relative;
+}
+.fech-pillar {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 0 32px;
+  border-right: 1px solid rgba(255,255,255,.07);
+}
+.fech-pillar:last-child { border-right: none; }
+.fech-pillar-val {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 26px; font-weight: 800; font-style: italic;
+  text-transform: uppercase;
+}
+.fech-pillar-val.g { color: var(--green-light); }
+.fech-pillar-val.b { color: #6ea8f7; }
+.fech-pillar-label {
+  font-size: 9px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(255,255,255,.2);
+}
+
+.fech-tags {
+  display: flex; gap: 10px; justify-content: center;
+  margin-top: 36px; position: relative;
+}
+.fech-tag {
+  padding: 8px 20px; border-radius: 100px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.03);
+  font-size: 15px;
+  color: rgba(255,255,255,.25);
+  transition: border-color .3s, color .3s;
+}
+.fech-tag:hover {
+  border-color: rgba(255,255,255,.18);
+  color: rgba(255,255,255,.45);
+}
+
+.icnnet {
+  border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #21417a, #2563ae);
+    border: none;
+}
+
+.lstgoutr {
+  width: min(300px, 24cqw);
+  aspect-ratio: 300/110;
+  height: auto;
+}
+
+
+/* ── Proteção de imagens ──────────── */
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* mock-grid precisa de clique — reativa eventos nas células */
+.mock-grid .mock-cell {
+  pointer-events: auto;
+}
+
+/* mock-grid precisa de clique — reativa eventos nas células */
+.mock-grid .mock-cell {
+  pointer-events: auto;
+}
+
+/* Overlay invisível sobre containers de imagem */
+.img-protect {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-protect::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  cursor: default;
+}
+
+/* ── Scrollbar ──────────────────── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,.1); border-radius: 2px; }
+
+/* Esconde scrollbar nas seções (rolam mas sem barra visível) */
+section::-webkit-scrollbar { width: 0; }
+section { scrollbar-width: none; }
+
+.classsoinst {
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: 300;
+}
+
+@media (max-width: 1600px) {
+  .small-grid .logo-frame {
+  height: clamp(180px, 32cqh, 350px) !important;
+}
+}
+
+/* ══════════════════════════════════
+   MOBILE  ≤ 1024 px
+══════════════════════════════════ */
+@media (max-width: 1024px) {
+
+  html { height: auto; overflow: auto; }
+  body { height: auto; overflow: auto; }
+
+  #scroll-container { height: auto; overflow-y: auto; }
+
+  .nav-dots { display: none; }
+
+  section {
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+    padding: 64px 20px 80px;
+    container-type: inline-size;
+  }
+
+  .page-num { right: 20px; bottom: 16px; }
+
+  /* ── Capa ─── */
+  #capa { padding-top: 88px; align-items: center; }
+  .capa-h1 { font-size: clamp(52px, 13vw, 90px); }
+  .capa-sub { margin: 20px auto 0; max-width: 100%; font-size: 14px; }
+  .capa-foot { flex-wrap: wrap; gap: 20px; margin-top: 36px; justify-content: flex-start; }
+  .orb-1 { width: 300px; height: 300px; }
+  .orb-2 { width: 200px; height: 200px; }
+
+  /* ── Section title / text ── */
+  .section-title { font-size: clamp(28px, 8vw, 52px); }
+  .section-text  { max-width: 100%; font-size: 13px; }
+
+  /* ── Contexto ─── */
+  .ctx-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 28px; }
+
+  /* ── Por que Shop — override inline grid ─── */
+  #porqueshop [style*="grid-template-columns:1fr 1fr"],
+  #porqueshop [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-top: 28px !important;
+  }
+  .brand-card { padding: 20px 20px !important; }
+
+  /* ── Shop / Network — two-col → single col ─── */
+  .two-col { grid-template-columns: 1fr; gap: 28px; margin-top: 20px; }
+
+  /* Logo frame */
+  .logo-frame { height: 180px !important; }
+  .small-grid .logo-frame { height: 160px !important; }
+
+  /* Small grid: mantém 2 colunas mas reduz gap */
+  .small-grid { gap: 10px; }
+
+  /* Symbol row: empilha verticalmente */
+  .symbol-row { flex-direction: column; gap: 12px; }
+  .symbol-icon {
+    aspect-ratio: unset !important;
+    border-radius: 10px;
+  }
+  .lstgoutr {
+    width: 100% !important;
+    height: 72px !important;
+    aspect-ratio: unset !important;
+  }
+  .symbol-text { font-size: 13px; }
+  .info-block { margin-bottom: 24px; }
+
+  /* Palette */
+  .palette { flex-wrap: wrap; gap: 8px; }
+  .swatch { flex: 1 1 calc(50% - 4px); min-width: 100px; }
+
+  /* ── Variações — grids inline ─── */
+  #variacoes [style*="gap:68px"],
+  #variacoes [style*="gap: 68px"] { gap: 36px !important; }
+
+  #variacoes [style*="grid-template-columns:repeat(4,1fr)"],
+  #variacoes [style*="grid-template-columns: repeat(4,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+  #variacoes .var-cell { height: 120px !important; }
+  
+  /* ── Mockups ─── */
+  .mock-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    height: auto !important;
+    margin-top: 24px;
+    gap: 10px;
+  }
+  .mock-cell { min-height: 110px; }
+  .mock-cell.span2 { grid-column: span 2; min-height: 150px; }
+
+  /* ── Fechamento ─── */
+  #fechamento { padding: 64px 20px 80px; align-items: flex-start; text-align: left; }
+  #fechamento > div { text-align: left; }
+  .fech-h2 { font-size: clamp(40px, 11vw, 80px); }
+  .fech-tags { justify-content: flex-start; flex-wrap: wrap; }
+}
+
+/* ── Extra small  ≤ 480 px ─── */
+@media (max-width: 480px) {
+  section { padding: 60px 16px 72px; }
+  .capa-h1 { font-size: clamp(44px, 14vw, 68px); }
+  .small-grid { grid-template-columns: 1fr; }
+  .small-grid .logo-frame { height: 140px !important; }
+  .palette { flex-direction: column; }
+  .swatch { flex: 1 1 100%; }
+  #variacoes .var-cell { height: 100px !important; }
+  .capa-foot { gap: 14px; }
+  .mock-grid { grid-template-columns: 1fr; }
+  .mock-cell.span2 { grid-column: span 1; }
+  .mock-cell { min-height: 100px; }
+  .fech-h2 { font-size: clamp(36px, 12vw, 60px); }
+}
+/* ── Back to top ────────────────── */
+#back-to-top {
+  position: absolute;
+  bottom: 32px;
+  right: max(80px, calc((100vw - 1600px) / 2 + 80px));
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+  color: rgba(255,255,255,.5);
+  font-size: 15px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background .25s, border-color .25s, color .25s, transform .25s;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10;
+}
+#back-to-top:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.28);
+  color: #fff;
+  transform: translateY(-3px);
+}
+@media (max-width: 1024px) {
+  #back-to-top { right: 20px; bottom: 20px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- Nav dots -->
+<nav class="nav-dots" id="navDots">
+  <a href="#capa"       class="active" title="Capa"></a>
+  <a href="#contexto"   title="Contexto"></a>
+  <a href="#porqueshop" title="Por que Shop?"></a>
+  <a href="#shop"       title="Shop"></a>
+  <a href="#network"    title="Network"></a>
+  <a href="#variacoes"  title="Variações"></a>
+  <a href="#mockups"    title="Mockups"></a>
+  <a href="#fechamento" title="Fim"></a>
+</nav>
+
+<div id="scroll-container">
+
+<!-- ══ 01 CAPA ══════════════════════ -->
+<section id="capa">
+  <div class="capa-bg"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div style="position:relative;">
+    <p class="capa-pre">Proposta de Identidade Visual</p>
+    <h1 class="capa-h1">
+      <span class="grad-green">Goianox</span><br>
+      <span class="outline">Ecosystem</span>
+    </h1>
+    <p class="capa-sub">Duas marcas, uma identidade coesa. Construída para o universo FiveM com decisões que têm razão de ser.</p>
+    <div class="capa-line"></div>
+  </div>
+
+  <div class="capa-foot">
+    <div class="foot-item">
+      <span class="foot-label">Projeto</span>
+      <span class="foot-val">Goianox Shop + Network</span>
+    </div>
+    <div class="foot-item">
+      <span class="foot-label">Segmento</span>
+      <span class="foot-val">FiveM : Mods, Scripts & Mapas</span>
+    </div>
+    <div class="foot-item">
+      <span class="foot-label">Ano</span>
+      <span class="foot-val">2026</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══ 02 CONTEXTO ══════════════════ -->
+<section id="contexto">
+  <div class="reveal">
+    <p class="section-label">Universo Goianox</p>
+    <h2 class="section-title">Duas marcas.Um ecossistema.</h2>
+    <p class="section-text">Quando você trouxe o projeto, o pedido era criar uma identidade para a loja. Mas ao entender como a operação funciona, ficou claro que havia dois contextos completamente diferentes convivendo sob o mesmo nome. Separar e nomear cada frente foi a primeira decisão do projeto, e a mais importante.</p>
+  </div>
+
+  <div class="ctx-grid">
+    <div class="brand-card green reveal d1">
+      <span class="card-tag green">Recomendado</span>
+      <p class="card-name grad-green">Goianox Shop</p>
+      <p class="card-desc">A vitrine da operação. Toda a identidade foi construída para falar diretamente com quem compra scripts, mapas, mods e assets FiveM. Quem entra na Shop já sabe o que vai encontrar, sem precisar de explicação.</p>
+    </div>
+    <div class="brand-card blue reveal d2">
+      <span class="card-tag blue">Original</span>
+      <p class="card-name grad-blue">Goianox Network</p>
+      <p class="card-desc">A identidade institucional. É o nome que representa a Goianox como organização, não como ponto de venda. Voltado para canais oficiais, presença digital e o posicionamento de longo prazo da marca no ecossistema FiveM.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══ 03 POR QUE SHOP ══════════════ -->
+<section id="porqueshop">
+  <div class="reveal">
+    <p class="section-label">Decisão de Naming</p>
+    <h2 class="section-title">Por que<br><span class="grad-green">Shop?</span></h2>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px;">
+
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div class="brand-card green reveal d1" style="padding:26px 28px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;">
+          <div class="symbol-icon green" style="width:40px;height:40px;border-radius:10px;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+          </div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Vocabulário nativo do gamer</p>
+        </div>
+        <p class="card-desc">"Shop" é a palavra que qualquer pessoa do universo FiveM reconhece de imediato, sem contexto adicional. Lojas de scripts, mapas e mods já operam com esse termo nativamente. O nome trabalha por conta própria antes mesmo de o cliente ver o logo.</p>
+      </div>
+
+      <div class="brand-card green reveal d2" style="padding:26px 28px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;">
+          <div class="symbol-icon green" style="width:40px;height:40px;border-radius:10px;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Clareza imediata</p>
+        </div>
+        <p class="card-desc">Quando alguém chega pela primeira vez, "Shop" entrega a função sem esforço. "Network" como nome de loja cria ruído, remete a servidor ou comunidade. Com "Shop", o cliente sabe o que é, o que encontra e o que pode comprar.</p>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div class="brand-card reveal d3" style="padding:26px 28px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;">
+          <div style="width:40px;height:40px;border-radius:10px;flex-shrink:0;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.55);">Network ficou para o servidor</p>
+        </div>
+        <p class="card-desc" style="color:rgba(255,255,255,.32);">Separar os nomes foi uma decisão estratégica, não estética. Network representa a identidade institucional da operação. Shop é o braço comercial, o e-commerce. Cada nome faz seu trabalho sem invadir o espaço do outro.</p>
+      </div>
+
+      <div class="brand-card reveal d4" style="padding:26px 28px;border-color:rgba(45,180,96,.2);">
+        <p class="block-label" style="margin-bottom:10px;">Resumindo</p>
+        <p style="font-size:28px;font-weight:800;line-height:1.15;">
+          <span class="grad-green">Shop vende.</span><br>
+          <span style="color:rgba(255,255,255,.35);">Network conecta.</span>
+        </p>
+        <p style="font-size:13px;color:rgba(255,255,255,.35);margin-top:12px;line-height:1.7;">Dois nomes. Duas funções. Um ecossistema que cresce com clareza, sem conflito de posicionamento entre as frentes da operação.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ══ 04 SHOP ═══════════════════════ -->
+<section id="shop">
+  <div class="reveal">
+    <p class="section-label">Identidade Principal</p>
+    <h2 class="section-title"><span class="grad-green">Goianox</span> Shop</h2>
+  </div>
+
+  <div class="two-col">
+    <!-- Coluna logo -->
+    <div class="reveal d1">
+      <div class="logo-frame" style="background:linear-gradient(135deg,#149173,#2db460);">
+        <img src="logo-shop.png" alt="Goianox Shop logo">
+      </div>
+      <div class="small-grid">
+        <div style="border-radius:14px;overflow:hidden;aspect-ratio:1;background:linear-gradient(135deg,#149173,#2db460);display:flex;align-items:center;justify-content:center;">
+          <img src="icone.png" style="height:60%;object-fit:contain;" alt="Ícone G">
+        </div>
+        <div class="logo-frame" style="height: 330px;background:#fff;">
+        <img src="logo-shop-black.png" style="height: 20%;" alt="Goianox Shop logo">
+      </div>
+      </div>
+    </div>
+
+    <!-- Coluna info -->
+    <div class="reveal d2" style="padding-top:6px;">
+      <div class="info-block">
+        <p class="block-label">O Símbolo</p>
+        <div class="symbol-row">
+          <div class="simbloimgg symbol-icon green">
+            <img src="trc.png" style="height: 20%; object-fit: contain;" alt="Goianox Shop logo">
+          </div>
+          <p class="symbol-text">O arco abaixo do logotipo é a curva de crescimento, e também um sorriso. Ele comunica leveza na experiência de compra, satisfação na entrega e uma relação de confiança com o cliente. Uma promessa visual simples, direta e humana.</p>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <p class="block-label">Paleta de Cores</p>
+        <div class="palette">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#149173;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Verde Profundo</p>
+              <p class="swatch-hex">#149173</p>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#2db460;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Verde Vibrante</p>
+              <p class="swatch-hex">#2DB460</p>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#fff;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Branco</p>
+              <p class="swatch-hex">#FFFFFF</p>
+            </div>
+          </div>
+        </div>
+        <p class="palette-note">Verde profundo ancora a solidez da marca. Verde vibrante traz a energia de uma operação em movimento. Juntos, formam o gradiente do crescimento que a Goianox Shop representa.<br><br>O verde também é a cor do universo gamer por excelência: barras de vida, interfaces HUD, menus FiveM. Para o público da loja, é uma linguagem visual já internalizada. Ver esse verde é sentir que está no lugar certo.</p>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<!-- ══ 04 NETWORK ════════════════════ -->
+<section id="network">
+  <div class="reveal">
+    <p class="section-label blue">Marca Secundária</p>
+    <h2 class="section-title"><span class="grad-blue">Goianox</span> Network</h2>
+  </div>
+
+  <div class="two-col">
+    <!-- Coluna logo -->
+    <div class="reveal d1">
+      <div class="logo-frame" style="background:linear-gradient(135deg,#21417a,#2563ae);">
+        <img src="logo-network.png" alt="Goianox Network logo">
+      </div>
+      <div class="small-grid">
+        <div style="border-radius:14px;overflow:hidden;aspect-ratio:1;background:linear-gradient(135deg,#21417a,#2563ae);display:flex;align-items:center;justify-content:center;">
+          <img src="icon-network.png" style="height:62%;object-fit:contain;" alt="Ícone Network">
+        </div>
+         <div class="logo-frame" style="height: 330px;background:#fff">
+        <img src="logo-network-black.png" style="height: 20%;" alt="Goianox Network logo">
+      </div>
+      </div>
+    </div>
+
+    <!-- Coluna info -->
+    <div class="reveal d2" style="padding-top:6px;">
+      <div class="info-block">
+        <p class="block-label">O Símbolo</p>
+        <div class="symbol-row">
+          <div class="simbloimgg symbol-icon blue">
+            <img src="icon-network.png" style="height:58%;object-fit:contain;" alt="">
+          </div>
+          <p class="symbol-text">Os três nós conectados em triângulo representam jogadores, servidores e comunidade. Nenhum ponto existe sozinho: cada conexão fortalece o conjunto. A topologia da rede virou o símbolo da marca. Distribuída, resiliente e sempre ativa.</p>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <p class="block-label">Proposta da Marca</p>
+        <div class="symbol-row">
+          <div class="lstgoutr symbol-icon blue">
+             <img src="logo-network.png" style="height:58%;object-fit:contain;" alt="">
+          </div>
+          <p class="symbol-text">Network carrega o peso institucional da operação. É o nome que representa a Goianox como organização, não como ponto de venda. O azul comunica precisão, credibilidade e a solidez que uma referência no segmento FiveM precisa transmitir.</p>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <p class="block-label">Paleta de Cores</p>
+        <div class="palette">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#21417a;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Azul Âncora</p>
+              <p class="swatch-hex">#21417A</p>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#2563ae;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Azul Ativo</p>
+              <p class="swatch-hex">#2563AE</p>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#fff;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Branco</p>
+              <p class="swatch-hex">#FFFFFF</p>
+            </div>
+          </div>
+        </div>
+        <p class="palette-note">Azul âncora estabelece autoridade e profundidade. Azul ativo abre espaço para dinamismo e presença digital. Juntos, comunicam uma operação séria e técnica sem perder modernidade.</p>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<!-- ══ 06 VARIAÇÕES ══════════════════ -->
+<section id="variacoes">
+  <div class="reveal">
+    <p class="section-label">Aplicações da Marca</p>
+    <h2 class="section-title">Variações & Versões</h2>
+    <p class="section-text">Uma identidade só é sólida quando funciona em qualquer superfície. Aqui estão as versões de cada marca adaptadas para fundos escuros, claros e monocromáticos.</p>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:68px;margin-top:32px;" class="reveal d1">
+
+    <!-- ── Linha Shop ── -->
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <p style="font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--green-light);">Shop</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+        <div class="var-cell on-green" style="aspect-ratio:auto;height:200px;">
+          <img src="logo-shop.png" alt="Logo Shop" >
+        </div>
+        <div class="var-cell on-green" style="aspect-ratio:auto;height:200px;">
+          <img src="icone.png" alt="Ícone G" >
+        </div>
+        <div class="var-cell on-black" style="aspect-ratio:auto;height:200px;">
+          <img src="logo-shop.png" alt="Logo Shop" >
+       
+        </div>
+        <div class="var-cell on-white" style="aspect-ratio:auto;height:200px;">
+          <img src="logo-shop-black.png" alt="Logo Shop" >
+       
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Linha Network ── -->
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <p style="font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#6ea8f7;">Network</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+        <div class="var-cell on-blue" style="aspect-ratio:auto;height:200px;">
+          <img src="logo-network.png" alt="Logo Network" >
+        </div>
+        <div class="var-cell on-blue" style="aspect-ratio:auto;height:200px;">
+          <img src="icon-network.png" alt="Ícone Network" >
+        </div>
+        <div class="var-cell on-black" style="aspect-ratio:auto;height:200px;">
+          <img src="logo-network.png" alt="Logo Network" >
+      
+        </div>
+        <div class="var-cell on-white" style="aspect-ratio:auto;height:200px;">
+          <img src="logo-network-black.png" alt="Logo Network" >
+       
+        </div>
+      </div>
+    </div>
+
+  </div>
+ 
+</section>
+
+<!-- ══ 07 MOCKUPS ════════════════════ -->
+<section id="mockups">
+  <div class="reveal">
+    <p class="section-label">Aplicações</p>
+    <h2 class="section-title">Mockups</h2>
+    <p class="section-text">A identidade saindo do papel. Aplicada a formatos digitais e físicos que a Goianox vai usar no dia a dia.</p>
+  </div>
+
+  <div class="mock-grid reveal d1">
+    <div class="mock-cell span2">
+      <img class="img1mk" src="mk4.png">
+    </div>
+    <div class="mock-cell">
+      <img class="img1mk" src="mk2.png">
+    </div>
+    <div class="mock-cell">
+      
+      <img class="img1mk" src="mk3.webp">
+   
+    </div>
+    <div class="mock-cell">
+      <img class="img1mk" src="mk1.png">
+    </div>
+    <div class="mock-cell">
+      <img class="img1mk" src="mk5.png">
+    </div>
+  </div>
+  
+</section>
+
+<!-- ══ 08 FECHAMENTO ═════════════════ -->
+<section id="fechamento">
+  <div class="fech-bg"></div>
+  <div class="fech-orb fech-orb-1"></div>
+  <div class="fech-orb fech-orb-2"></div>
+  <div class="fech-orb fech-orb-3"></div>
+  <div class="fech-topline"></div>
+
+  <div style="position:relative;text-align:center;">
+
+    <p class="fech-pre reveal">Proposta entregue</p>
+
+    <h2 class="fech-h2 reveal d1">
+      <span class="grad-green">Goianox</span><br>
+      <span class="fech-world">
+        <span class="fech-world-inner" data-text="é um mundo">é um mundo</span><span class="fech-dot">.</span>
+      </span>
+    </h2>
+
+    <div class="fech-divider reveal d2">
+      <div class="fech-divider-line"></div>
+      <div class="fech-divider-icon">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <circle cx="5" cy="5" r="2" fill="rgba(255,255,255,.25)"/>
+        </svg>
+      </div>
+      <div class="fech-divider-line"></div>
+    </div>
+
+    <p class="fech-sub reveal d2">Duas marcas. Uma identidade coesa.<br>Cada decisão aqui tem uma razão de ser.</p>
+
+    <div class="fech-pillars reveal d3">
+      <div class="fech-pillar">
+        <span class="fech-pillar-val g">Shop</span>
+        <span class="fech-pillar-label">Goianox</span>
+      </div>
+      <div class="fech-pillar">
+        <span class="fech-pillar-val b">Network</span>
+        <span class="fech-pillar-label">Goianox</span>
+      </div>
+    </div>
+
+    <div class="fech-tags reveal d4">
+      <span class="fech-tag">Carlos Design</span>
+      <span class="classsoinst fech-tag">
+        <i class="fa-brands fa-instagram"></i>
+        @carlosdesigner.ux</span>
+    </div>
+
+  </div>
+
+  <button id="back-to-top" title="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+</section>
+
+</div><!-- /scroll-container -->
+
+<script>
+const container = document.getElementById('scroll-container');
+const sections  = Array.from(document.querySelectorAll('section[id]'));
+const dots      = document.querySelectorAll('.nav-dots a');
+
+/* ── Detecta mobile ─────────────── */
+const isMobile = () => window.innerWidth <= 1024;
+
+/* ── Índice da secção actual ─────── */
+let current  = 0;
+let animating = false;
+
+/* ── Easing suave (ease-in-out-cubic) */
+function easeInOutCubic(t) {
+  return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+}
+
+/* ── Anima o scroll para uma secção ─ */
+function goTo(index, duration = 480) {
+  if (animating || index < 0 || index >= sections.length) return;
+  animating = true;
+
+  const goingDown = index > current;
+
+  /* Reseta o scroll interno da seção que está sendo deixada */
+  sections[current].scrollTop = goingDown ? 0 : sections[current].scrollHeight;
+  /* Seção de destino: topo se descendo, fundo se subindo */
+  sections[index].scrollTop = goingDown ? 0 : sections[index].scrollHeight;
+
+  current = index;
+
+  const start    = container.scrollTop;
+  const target   = sections[index].offsetTop;
+  const distance = target - start;
+  const startTime = performance.now();
+
+  function step(now) {
+    const elapsed  = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    container.scrollTop = start + distance * easeInOutCubic(progress);
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      animating = false;
+      updateDots();
+    }
+  }
+  requestAnimationFrame(step);
+  updateDots();
+}
+
+/* ── Atualiza os pontos de nav ─────── */
+function updateDots() {
+  dots.forEach(d => d.classList.remove('active'));
+  const active = document.querySelector(`.nav-dots a[href="#${sections[current].id}"]`);
+  if (active) active.classList.add('active');
+}
+
+/* ── Roda do rato (apenas desktop) ── */
+let wheelCooldown = false;
+container.addEventListener('wheel', e => {
+  if (isMobile()) return;           /* scroll natural no mobile */
+  e.preventDefault();
+
+  const sec       = sections[current];
+  const overflows = sec.scrollHeight > sec.clientHeight + 2;
+
+  if (overflows) {
+    const atBottom = sec.scrollTop + sec.clientHeight >= sec.scrollHeight - 4;
+    const atTop    = sec.scrollTop <= 4;
+
+    /* Ainda há conteúdo interno para rolar → rola a seção (só se não estiver animando) */
+    if (e.deltaY > 0 && !atBottom) {
+      if (!animating) sec.scrollTop += Math.abs(e.deltaY) * 2.5;
+      return;
+    }
+    if (e.deltaY < 0 && !atTop) {
+      if (!animating) sec.scrollTop -= Math.abs(e.deltaY) * 2.5;
+      return;
+    }
+  }
+
+  /* Chegou ao limite da secção (ou não tem overflow) → snap para próxima */
+  if (wheelCooldown) return;
+  wheelCooldown = true;
+  setTimeout(() => { wheelCooldown = false; }, 550);
+  goTo(e.deltaY > 0 ? current + 1 : current - 1);
+}, { passive: false });
+
+/* ── Toque (swipe apenas no desktop > 1024) ── */
+let touchStart = 0;
+container.addEventListener('touchstart', e => { touchStart = e.touches[0].clientY; }, { passive: true });
+container.addEventListener('touchend', e => {
+  if (isMobile()) return;           /* scroll natural no mobile */
+  const diff = touchStart - e.changedTouches[0].clientY;
+  if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+}, { passive: true });
+
+/* ── Cliques nos pontos ─────────── */
+dots.forEach(dot => {
+  dot.addEventListener('click', e => {
+    e.preventDefault();
+    const id  = dot.getAttribute('href').slice(1);
+    const idx = sections.findIndex(s => s.id === id);
+    goTo(idx);
+  });
+});
+
+/* ── Atualiza secção activa no scroll natural (mobile) ── */
+container.addEventListener('scroll', () => {
+  if (!isMobile()) return;
+  const scrollY = container.scrollTop + window.innerHeight / 2;
+  let closest = 0;
+  sections.forEach((sec, i) => {
+    if (sec.offsetTop <= scrollY) closest = i;
+  });
+  if (closest !== current) {
+    current = closest;
+    updateDots();
+  }
+}, { passive: true });
+
+/* ── Reveal on scroll ─────────────── */
+const revealEls = document.querySelectorAll('.reveal');
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { root: container, threshold: 0.08 });
+revealEls.forEach(el => ro.observe(el));
+
+/* ── Proteção de conteúdo ─────────────────────────────── */
+
+// Bloqueia menu de contexto (botão direito)
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Bloqueia arrastar imagens
+document.addEventListener('dragstart', e => {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
+
+// Bloqueia seleção de texto/imagens
+document.addEventListener('selectstart', e => e.preventDefault());
+
+// Bloqueia atalhos: Ctrl+S, Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+J, F12, PrintScreen
+document.addEventListener('keydown', e => {
+  const blocked = (
+    (e.ctrlKey && ['s','u','p'].includes(e.key.toLowerCase())) ||
+    (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase())) ||
+    e.key === 'F12' ||
+    e.key === 'PrintScreen'
+  );
+  if (blocked) e.preventDefault();
+});
+
+// Ao tirar print (PrintScreen) — limpa clipboard com texto vazio
+document.addEventListener('keyup', e => {
+  if (e.key === 'PrintScreen') {
+    navigator.clipboard?.writeText('').catch(() => {});
+  }
+});
+
+
+
+/* ── Mockup FLIP swap ─────────────── */
+(function initMockSwap() {
+  const grid = document.querySelector('.mock-grid');
+  if (!grid) return;
+
+  let isAnimating = false;
+
+  grid.addEventListener('click', e => {
+    if (isAnimating) return;
+    if (window.innerWidth <= 1024) return;
+    const clicked = e.target.closest('.mock-cell');
+    if (!clicked || clicked.classList.contains('span2')) return;
+
+    isAnimating = true;
+
+    const allCells = Array.from(grid.querySelectorAll('.mock-cell'));
+    const currentSpan2 = grid.querySelector('.mock-cell.span2');
+
+    /* 1. FIRST — captura todos os rects antes de qualquer mudança de DOM */
+    const firstRects = new Map();
+    allCells.forEach(c => firstRects.set(c, c.getBoundingClientRect()));
+
+    /* 2. LAST — muda o DOM: move a célula clicada para primeiro filho
+       e transfere a classe span2. A grid reflui automaticamente:
+       - clicked (agora primeiro filho + span2) ocupa col1 row1-2
+       - currentSpan2 (agora posição 1) ocupa col2 row1
+       - demais se reorganizam nas posições restantes                  */
+    currentSpan2.classList.remove('span2');
+    clicked.classList.add('span2');
+    grid.insertBefore(clicked, grid.firstChild);
+
+    /* Força reflow para obter os rects finais */
+    void grid.offsetHeight;
+
+    /* 3. INVERT — aplica transform que faz cada célula parecer
+       estar ainda na posição antiga (sem transição)                   */
+    allCells.forEach(c => {
+      const from = firstRects.get(c);
+      const to   = c.getBoundingClientRect();
+
+      const dx     = from.left   - to.left;
+      const dy     = from.top    - to.top;
+      const scaleX = from.width  / to.width;
+      const scaleY = from.height / to.height;
+
+      c.style.transition       = 'none';
+      c.style.transformOrigin  = '0 0';
+      c.style.transform        = `translate(${dx}px,${dy}px) scale(${scaleX},${scaleY})`;
+      c.style.zIndex           = '5';
+    });
+
+    /* 4. PLAY — dois rAF garante que o browser pintou o estado invertido
+       antes de iniciar a transição para a posição final               */
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const DUR    = '560ms';
+        const EASE   = 'cubic-bezier(0.65, 0, 0.35, 1)';
+        let   settled = false;
+
+        function cleanup() {
+          if (settled) return;
+          settled = true;
+          allCells.forEach(c => {
+            c.style.transition      = '';
+            c.style.transform       = '';
+            c.style.transformOrigin = '';
+            c.style.zIndex          = '';
+          });
+          isAnimating = false;
+        }
+
+        allCells.forEach(c => {
+          c.style.transition = `transform ${DUR} ${EASE}`;
+          c.style.transform  = 'translate(0,0) scale(1,1)';
+        });
+
+        /* Ouve o fim da transição na célula que mais se moveu (clicked) */
+        clicked.addEventListener('transitionend', cleanup, { once: true });
+        /* Fallback: garante reset mesmo se transitionend não disparar */
+        setTimeout(cleanup, 650);
+      });
+    });
+  });
+})();
+
+/* ── Mockup FLIP swap ─────────────── */
+(function initMockSwap() {
+  const grid = document.querySelector('.mock-grid');
+  if (!grid) return;
+
+  let isAnimating = false;
+
+  grid.addEventListener('click', e => {
+    if (isAnimating) return;
+    if (window.innerWidth <= 1024) return;
+    const clicked = e.target.closest('.mock-cell');
+    if (!clicked || clicked.classList.contains('span2')) return;
+
+    isAnimating = true;
+
+    const allCells = Array.from(grid.querySelectorAll('.mock-cell'));
+    const currentSpan2 = grid.querySelector('.mock-cell.span2');
+
+    const firstRects = new Map();
+    allCells.forEach(c => firstRects.set(c, c.getBoundingClientRect()));
+
+    currentSpan2.classList.remove('span2');
+    clicked.classList.add('span2');
+    grid.insertBefore(clicked, grid.firstChild);
+
+    void grid.offsetHeight;
+
+    allCells.forEach(c => {
+      const from = firstRects.get(c);
+      const to   = c.getBoundingClientRect();
+      const dx     = from.left   - to.left;
+      const dy     = from.top    - to.top;
+      const scaleX = from.width  / to.width;
+      const scaleY = from.height / to.height;
+      c.style.transition      = 'none';
+      c.style.transformOrigin = '0 0';
+      c.style.transform       = `translate(${dx}px,${dy}px) scale(${scaleX},${scaleY})`;
+      c.style.zIndex          = '5';
+    });
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const DUR  = '560ms';
+        const EASE = 'cubic-bezier(0.65, 0, 0.35, 1)';
+        let settled = false;
+
+        function cleanup() {
+          if (settled) return;
+          settled = true;
+          allCells.forEach(c => {
+            c.style.transition      = '';
+            c.style.transform       = '';
+            c.style.transformOrigin = '';
+            c.style.zIndex          = '';
+          });
+          isAnimating = false;
+        }
+
+        allCells.forEach(c => {
+          c.style.transition = `transform ${DUR} ${EASE}`;
+          c.style.transform  = 'translate(0,0) scale(1,1)';
+        });
+
+        clicked.addEventListener('transitionend', cleanup, { once: true });
+        setTimeout(cleanup, 650);
+      });
+    });
+  });
+})();
+
+/* ── Init ─────────────────────────── */
+updateDots();
+
+/* ── Back to top ─────────────────── */
+document.getElementById('back-to-top').addEventListener('click', () => goTo(0));
+
+/* ══ Background orbs para todas as seções ══════════════════
+   Cada seção recebe orbs animados + linha superior luminosa.
+   A paleta varia por seção para criar ritmo visual distinto.
+═══════════════════════════════════════════════════════════ */
+(function injectSectionBgs() {
+  const configs = {
+    capa:       null,
+    contexto:   [
+      { color:'20,145,115', opacity:.07, size:480, top:'-10%', left:'-8%',  delay:'0s',   dur:'13s' },
+      { color:'33,65,122',  opacity:.06, size:360, top:'30%',  left:'60%',  delay:'-5s',  dur:'16s' },
+      { color:'45,180,96',  opacity:.04, size:260, top:'65%',  left:'20%',  delay:'-9s',  dur:'11s' },
+    ],
+    porqueshop: [
+      { color:'45,180,96',  opacity:.07, size:500, top:'-15%', left:'55%',  delay:'-2s',  dur:'14s' },
+      { color:'20,145,115', opacity:.05, size:300, top:'60%',  left:'-5%',  delay:'-7s',  dur:'10s' },
+      { color:'33,65,122',  opacity:.04, size:220, top:'10%',  left:'10%',  delay:'-4s',  dur:'17s' },
+    ],
+    shop:       [
+      { color:'20,145,115', opacity:.08, size:520, top:'-20%', left:'60%',  delay:'-1s',  dur:'12s' },
+      { color:'45,180,96',  opacity:.05, size:300, top:'70%',  left:'-5%',  delay:'-6s',  dur:'15s' },
+      { color:'33,65,122',  opacity:.04, size:200, top:'40%',  left:'40%',  delay:'-10s', dur:'18s' },
+    ],
+    network:    [
+      { color:'33,65,122',  opacity:.09, size:520, top:'-15%', left:'-5%',  delay:'-3s',  dur:'14s' },
+      { color:'37,99,174',  opacity:.06, size:360, top:'55%',  left:'55%',  delay:'-8s',  dur:'11s' },
+      { color:'20,145,115', opacity:.04, size:240, top:'20%',  left:'65%',  delay:'-1s',  dur:'16s' },
+    ],
+    variacoes:  [
+      { color:'45,180,96',  opacity:.06, size:440, top:'-10%', left:'50%',  delay:'-4s',  dur:'13s' },
+      { color:'20,145,115', opacity:.05, size:320, top:'60%',  left:'-5%',  delay:'-9s',  dur:'17s' },
+      { color:'37,99,174',  opacity:.04, size:200, top:'30%',  left:'25%',  delay:'-2s',  dur:'10s' },
+    ],
+    mockups:    [
+      { color:'33,65,122',  opacity:.08, size:480, top:'-20%', left:'60%',  delay:'-5s',  dur:'12s' },
+      { color:'20,145,115', opacity:.06, size:300, top:'65%',  left:'-8%',  delay:'-2s',  dur:'15s' },
+      { color:'45,180,96',  opacity:.04, size:220, top:'15%',  left:'15%',  delay:'-7s',  dur:'19s' },
+    ],
+    fechamento: null,
+  };
+
+  sections.forEach(sec => {
+    const id  = sec.id;
+    const orbs = configs[id];
+    if (!orbs) return;
+
+    /* linha luminosa no topo */
+    const tl = document.createElement('div');
+    tl.className = 'section-topline';
+    sec.insertBefore(tl, sec.firstChild);
+
+    /* orbs */
+    orbs.forEach(cfg => {
+      const el = document.createElement('div');
+      el.className = 'bg-orb';
+      el.style.cssText =
+        'width:' + cfg.size + 'px;height:' + cfg.size + 'px;' +
+        'background:rgb(' + cfg.color + ');opacity:' + cfg.opacity + ';' +
+        'top:' + cfg.top + ';left:' + cfg.left + ';' +
+        'animation-delay:' + cfg.delay + ';animation-duration:' + cfg.dur + ';';
+      sec.insertBefore(el, sec.firstChild);
+    });
+  });
+})();
+
+
+/* ── Corrige justify-content quando seção transborda ─
+   justify-content:center num flex com overflow esconde
+   o topo (acima do scrollTop:0). Solução: muda para
+   flex-start quando o conteúdo não cabe na tela.       */
+function updateSectionLayout() {
+  sections.forEach(sec => {
+    /* mede com flex-start para obter o scrollHeight real */
+    sec.style.justifyContent = 'flex-start';
+    const overflows = sec.scrollHeight > sec.clientHeight + 2;
+    /* se não transborda → volta ao center; se transborda → fica flex-start */
+    sec.style.justifyContent = overflows ? 'flex-start' : '';
+  });
+}
+updateSectionLayout();
+window.addEventListener('resize', updateSectionLayout);
+</script>
+</body>
+</html>
